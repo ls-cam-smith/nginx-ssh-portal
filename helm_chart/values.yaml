@@ -1,6 +1,6 @@
 # Default values for nginx-ssh-portal.
 image:
-  repository: nginx-ssh-portal
+  repository: ""
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
