@@ -1,0 +1,1 @@
+To expose the ssh port via the ingress controller you will need to follow this guide: https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/
