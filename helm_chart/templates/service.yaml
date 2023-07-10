@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "nginx-ssh-portal.fullname" . }}
+  labels:
+    {{- include "nginx-ssh-portal.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.ingress.httpPort }}
+      targetPort: 80
+      protocol: TCP
+      name: http
+    - port: {{ .Values.ingress.sshPort }}
+      targetPort: 22
+      protocol: TCP
+      name: ssh
+  selector:
+    {{- include "nginx-ssh-portal.selectorLabels" . | nindent 4 }}

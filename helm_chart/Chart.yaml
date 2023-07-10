@@ -1,0 +1,8 @@
+apiVersion: v2
+name: nginx-ssh-portal
+description: An nginx proxy that forwards traffic to a local port, and accepts ssh remote tunnels.
+
+type: application
+
+version: 0.1.0
+appVersion: "0.1.0"

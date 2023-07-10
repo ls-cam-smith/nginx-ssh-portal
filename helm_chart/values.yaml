@@ -1,0 +1,29 @@
+# Default values for nginx-ssh-portal.
+image:
+  repository: nginx-ssh-portal
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+  hostname: "example.com"
+  sharedSecretPrefix: "abc-def/"
+  httpPort: 80
+  sshPort: 22
+
+podAnnotations: {}
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
